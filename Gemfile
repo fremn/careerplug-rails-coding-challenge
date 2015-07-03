@@ -10,8 +10,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'formtastic'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'formtastic-bootstrap'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
   gem 'spring'
+  gem 'rspec-rails'
 end
