@@ -1,0 +1,20 @@
+<ul class="nav navbar-nav">
+  <li><%= link_to 'My Jobs', jobs_path %> </li>
+  <li><%= link_to 'Post a Job', new_job_path %></li>
+</ul>
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Jobs">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<div class=" navbar-right">
+  <ul class="nav navbar-nav">
+    <li>
+      <%= link_to "Hi #{current_user.first_name.try(:capitalize)}", edit_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
+</div>
