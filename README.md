@@ -8,7 +8,7 @@ ability to read and understand user requirements.
 
 * Fork this repository
 * Create a new branch named [YOUR FIRST NAME]-[YOUR LAST NAME]
-* Complete both features in this branch
+* Complete all features in this branch
 * Submit a pull request when you are finished.
 
 ## What are we looking for?
