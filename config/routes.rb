@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "jobs#index"
+
+
+  authenticated :user do
+    root to: "jobs#index", as: :authenticated_root
+  end
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
+
+  devise_scope :user do
+    root to: "registrations#new"
+  end
 
   resources :jobs
 

@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all
+    @jobs = Job.where(user: current_user) if current_user
   end
 
   def new
@@ -8,7 +8,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(permitted_params)
+    @job = Job.new(permitted_params.merge(user: current_user))
     respond_to do |format|
       if @job.save
         format.html { redirect_to root_path, notice: 'Your job has been posted.' }
