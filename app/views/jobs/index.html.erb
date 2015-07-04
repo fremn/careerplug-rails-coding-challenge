@@ -1,5 +1,5 @@
-<h1>All jobs</h1>
+<h1><%= current_user ? 'My Job Postings' : 'All Jobs' %></h1>
 <% @jobs.each do |job| %>
-  <h4><%= job.name %></h4>
+  <h4><%= link_to job.name, job_path(job.id) %></h4>
   <p><%= job.description.html_safe %></p>
 <% end %>
