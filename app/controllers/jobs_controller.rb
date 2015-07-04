@@ -8,6 +8,7 @@ class JobsController < ApplicationController
   end
 
   def create
+    return redirect_to root_path unless current_user
     @job = Job.new(permitted_params.merge(user: current_user))
     respond_to do |format|
       if @job.save

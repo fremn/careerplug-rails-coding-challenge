@@ -17,5 +17,5 @@ class Job < ActiveRecord::Base
 
   belongs_to :user
 
-  validates_presence_of :name, :description, :status, :employment_type
+  validates_presence_of :name, :description, :status, :employment_type, :user_id
 end
