@@ -18,4 +18,13 @@ class Job < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :name, :description, :status, :employment_type, :user_id
+
+  def self.search(terms:)
+    table = Job.arel_table
+    clause = table[:name].matches("%#{terms}%")
+    terms.split(' ').each do |term|
+      clause = clause.or(table[:name].matches("%#{term}%"))
+    end
+    where(clause)
+  end
 end

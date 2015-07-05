@@ -19,8 +19,16 @@ class JobsController < ApplicationController
     end
   end
 
+  def search
+    @jobs = Job.where(user: current_user).search(terms: search_params[:terms])
+    render :index
+  end
+
   private
 
+  def search_params
+    params.permit(:terms)
+  end
   def permitted_params
     params.require(:job).permit(:name, :description, :status, :employment_type)
   end
