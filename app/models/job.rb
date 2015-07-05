@@ -23,7 +23,7 @@ class Job < ActiveRecord::Base
     table = Job.arel_table
     clause = table[:name].matches("%#{terms}%")
     terms.split(' ').each do |term|
-      clause = clause.or(table[:name].matches("%#{term}%"))
+      clause = clause.or(table[:name].matches("%#{term}%")).or(table[:description].matches("%#{term}%"))
     end
     where(clause)
   end
