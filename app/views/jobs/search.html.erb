@@ -1,0 +1,4 @@
+<h1><%= "Found #{@jobs.count} Jobs for '#{@terms}'" %></h1>
+<%= link_to 'clear search', jobs_path %>
+
+<%= render 'jobs_list', jobs: @jobs %>

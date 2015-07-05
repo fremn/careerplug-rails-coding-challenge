@@ -1,0 +1,4 @@
+<% jobs.each do |job| %>
+  <h4><%= link_to job.name, job_path(job.id) %></h4>
+  <p><%= job.description.html_safe %></p>
+<% end %>

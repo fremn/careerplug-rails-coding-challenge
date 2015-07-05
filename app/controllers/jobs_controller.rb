@@ -21,7 +21,7 @@ class JobsController < ApplicationController
 
   def search
     @jobs = Job.where(user: current_user).search(terms: search_params[:terms])
-    render :index
+    @terms = search_params[:terms]
   end
 
   private
