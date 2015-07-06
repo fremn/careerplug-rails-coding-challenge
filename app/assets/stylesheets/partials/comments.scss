@@ -1,0 +1,14 @@
+.commentList {
+  border: 1px solid #DADADA;
+  max-height: 200px;
+  overflow-x: scroll;
+}
+
+.comment {
+  margin: 0;
+  padding: 0.6em;
+  &:nth-child(2n) {
+    background-color: #E4F2F2;
+  }
+  background-color: #f3f3f3;
+}

@@ -16,6 +16,7 @@ class Job < ActiveRecord::Base
   enum employment_type: [:full_time, :part_time]
 
   belongs_to :user
+  has_many :comments
 
   validates_presence_of :name, :description, :status, :employment_type, :user_id
 
